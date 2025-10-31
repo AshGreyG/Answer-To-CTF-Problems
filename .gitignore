@@ -2,5 +2,6 @@
 *.png
 *.svg
 *.pdf
+*.zip
 
 **/.venv
