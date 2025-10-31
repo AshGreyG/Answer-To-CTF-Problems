@@ -1,0 +1,6 @@
+*.jpg
+*.png
+*.svg
+*.pdf
+
+**/.venv
