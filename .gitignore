@@ -3,6 +3,15 @@
 *.svg
 *.pdf
 *.zip
+*.csv
+*.sql
+*.chr
+*.mp3
+package.json
+package-lock.json
+deno.json
+deno.lock
 
-**/.venv
-**/__pycache__
+**/.venv/
+**/__pycache__/
+**/node_modules/

@@ -51,15 +51,15 @@ function stringToUTF8(str: string): string {
 function utf8ToString(utf8: string): string {
   assert(utf8.length % 2 === 0, "The length of decoded utf8 string must be even.");
 
-  const splited: string[] = [];
+  const splitted: string[] = [];
   for (let i = 0; i < utf8.length; ++i) {
-    if (i % 2 === 0) splited.push("%");
-    splited.push(utf8[i]);
+    if (i % 2 === 0) splitted.push("%");
+    splitted.push(utf8[i]);
   }
 
   // Every one 16-bit (every two characters) as a hex-represented component.
 
-  return decodeURIComponent(splited.join(""));
+  return decodeURIComponent(splitted.join(""));
 }
 
 /**
@@ -98,7 +98,7 @@ function hexToDuodecimal(hex: string): number[] {
  * @param duo The duodecimal array
  * @returns Return the hex-represented string of duodecimal array
  */
-function duoToHexdecimal(duo: number[]): string {
+function duoToHexadecimal(duo: number[]): string {
   duo.forEach(d => assert(d >= 0 && d <= 11, `Duodecimal array is out of bound: ${d}`));
 
   const hex: string[] = [];
@@ -149,7 +149,7 @@ function coreValuesDecode(encoded: string): string {
     }
   });
 
-  const hex = duoToHexdecimal(duo);
+  const hex = duoToHexadecimal(duo);
   assert(hex.length % 2 === 0, "Hex-represented string must be even");
   try {
     return utf8ToString(hex);
